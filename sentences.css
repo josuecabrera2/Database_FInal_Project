@@ -1,0 +1,88 @@
+/* crime_page.css */
+
+/* Basic reset for padding, margin, and box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensures full height for the root element */
+    width: 100%; /* Ensures full width */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Standard sans-serif font */
+    min-height: 100vh; /* Full viewport height */
+    background-image: url('../images/sentences.png'); /* Background image for the page */
+    background-size: contain; /* Ensure the entire image is visible */
+    background-repeat: no-repeat; /* No repeating of the background image */
+    background-position: center 20px; /* Centered horizontally, 20px from the top */
+    background-color: #f0f0f0; /* Light gray background color */
+    padding: 240px 60px; /* Padding around the content */
+}
+
+/* Styling sections for clarity and visual appeal */
+section {
+    background-color: white; /* White background for sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside sections */
+    margin: 10px 0; /* Vertical spacing between sections */
+    width: calc(100% - 40px); /* Width accounting for padding */
+    max-width: 600px; /* Max width to maintain readability */
+}
+
+/* Header styles */
+h1 {
+    color: #333; /* Dark grey for the main header */
+    text-align: center; /* Center the main title */
+    margin: 20px 0; /* Margin above and below the header */
+}
+
+h2 {
+    color: #666; /* Medium grey for subheaders */
+    border-bottom: 2px solid #eee; /* Underline for subheaders */
+    padding-bottom: 5px; /* Space below text before the line */
+    margin-bottom: 10px; /* Space after the line */
+}
+
+/* Text and list styling for consistency */
+p, ul {
+    color: #444; /* Dark grey for text */
+    line-height: 1.6; /* Line height for readability */
+}
+
+ul {
+    list-style-type: none; /* No bullets for lists */
+}
+
+li {
+    padding: 5px 0; /* Padding for each list item */
+    border-bottom: 1px solid #eee; /* Separator line between items */
+}
+
+/* Specific styles for IDs */
+#criminal-id {
+    font-size: 18px; /* Larger font for emphasis */
+    color: #333; /* Dark grey for visibility */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 5px; /* Padding around the ID */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 100px 10px; /* Reduced padding on smaller screens */
+    }
+
+    section {
+        width: calc(100% - 20px); /* Adjust section width on smaller screens */
+    }
+
+    h1, h2 {
+        text-align: left; /* Left-align headers on smaller screens */
+    }
+}
