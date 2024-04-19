@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/BrooklynPoliceDept.png'); 
+    background-size: cover;
+    background-position: center;
+    font-size: 14px;
+}
+
+.search-container {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 40vh;
+    margin-bottom: auto;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.search-form .form-field {
+    padding: 0 10px;
+    margin: 0;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Removed top margin */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+.search-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for button background */
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+}
+
+input[type="text"], input[type="password"], button[type="submit"] {
+    width: 100%; /* Full width of the parent container */
+    padding: 10px; /* Padding inside the box */
+    /* ... other styles ... */
+}
+
+/* If the form itself is a flex item, make sure it doesn't shrink smaller than its content */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensures that the children (input/button) can be as wide as the form */
+    max-width: 100%; /* You can set a max-width here if you want */
+}
+
