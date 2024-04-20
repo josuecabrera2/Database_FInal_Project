@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Criminal Details</title>
-    <link rel="stylesheet" href="css/Criminal_info_page.css">
+    <link rel="stylesheet" href="css/second_page.css">
 </head>
 <body>
     <h1>Search for Criminal</h1>
