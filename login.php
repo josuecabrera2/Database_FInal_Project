@@ -11,7 +11,7 @@
 
     <!-- Login Form for Admin -->
     <form method="POST" action="">
-        <label for="perm_id">Permission ID:</label>
+        <label for="perm_id">ID:</label>
         <input type="text" id="perm_id" name="perm_id" required>
         <label for="psw">Password:</label>
         <input type="password" id="psw" name="psw" required>
