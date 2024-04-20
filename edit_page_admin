@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Criminals and Crimes</title>
+    <link rel="stylesheet" href="css/edit_page.css">
+</head>
+<body>
+    <h1>Edit Criminals and Crimes</h1>
+
+    <?php
+    // Database connection
+    $servername = "localhost";
+    $username = "root";
+    $password = "";  // Use the actual password, if any
+    $dbname = "Criminals";  // Ensure this is the correct database name
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Handle form submissions
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["update"])) {
+            $crimeID = $_POST["crime_id"];
+            $classification = $_POST["classification"];
+            $dateCharged = $_POST["date_charged"];
+            $status = $_POST["status"];
+            $hearingDate = $_POST["hearing_date"];
+
+            $sql = "UPDATE Crimes SET Classification='$classification', Date_charged='$dateCharged', Status='$status', Hearing_date='$hearingDate' WHERE Crime_ID='$crimeID'";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+        } elseif (isset($_POST["delete"])) {
+            $crimeID = $_POST["crime_id"];
+            $sql = "DELETE FROM Crimes WHERE Crime_ID='$crimeID'";
+            if ($conn->query($sql) === TRUE) {
+                echo "Record deleted successfully";
+            } else {
+                echo "Error deleting record: " . $conn->error;
+            }
+        } elseif (isset($_POST["add"])) {
+            $criminalID = $_POST["criminal_id"];
+            $classification = $_POST["classification"];
+            $dateCharged = $_POST["date_charged"];
+            $status = $_POST["status"];
+            $hearingDate = $_POST["hearing_date"];
+
+            $sql = "INSERT INTO Crimes (Criminal_ID, Classification, Date_charged, Status, Hearing_date) VALUES ('$criminalID', '$classification', '$dateCharged', '$status', '$hearingDate')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+    }
+
+    // Close connection
+    $conn->close();
+    ?>
+
+    <h2>Update Crime</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        Crime ID: <input type="text" name="crime_id"><br>
+        Classification: <input type="text" name="classification"><br>
+        Date Charged: <input type="text" name="date_charged"><br>
+        Status: <input type="text" name="status"><br>
+        Hearing Date: <input type="text" name="hearing_date"><br>
+        <input type="submit" name="update" value="Update Record">
+    </form>
+
+    <h2>Delete Crime</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        Crime ID: <input type="text" name="crime_id"><br>
+        <input type="submit" name="delete" value="Delete Record">
+    </form>
+
+    <h2>Add Crime</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        Criminal ID: <input type="text" name="criminal_id"><br>
+        Classification: <input type="text" name="classification"><br>
+        Date Charged: <input type="text" name="date_charged"><br>
+        Status: <input type="text" name="status"><br>
+        Hearing Date: <input type="text" name="hearing_date"><br>
+        <input type="submit" name="add" value="Add Record">
+    </form>
+</body>
+</html>
