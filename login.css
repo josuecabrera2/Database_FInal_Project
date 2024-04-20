@@ -1,4 +1,4 @@
-styles.css
+/* styles.css */
 
 /* Basic reset for padding, margin, and box-sizing */
 * {
@@ -67,7 +67,7 @@ li {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     section {
-        width: 90%; /* Wider sections on smaller screens */
+        width: 70%; /* Wider sections on smaller screens */
     }
 
     h1, h2 {
