@@ -3,7 +3,7 @@
 /* Basic reset for padding, margin, and box-sizing */
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 10;
     padding: 0;
 }
 
@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
     padding: 20px;
     flex-direction: column;
-    background-image: url('/my_project/images/criminal_page.png'); /* Path to your background image */
+    background-image: url('../images/criminal_page.png'); /* Path to your background image */
     background-size: cover;
     background-position: center;
     background-color: #f0f0f0; /* Fallback color */
