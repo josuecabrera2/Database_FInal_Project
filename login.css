@@ -1,0 +1,10 @@
+body {
+    background-image: url('../images/BrooklynPoliceDept.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #f0f0f0;
+    background-attachment: fixed;
+}
+
+
