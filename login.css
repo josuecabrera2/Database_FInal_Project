@@ -1,10 +1,78 @@
+styles.css
+
+/* Basic reset for padding, margin, and box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 10;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensures full height for the root element */
+    width: 100%; /* Ensures full width */
+}
+
 body {
-    background-image: url('../images/BrooklynPoliceDept.png');
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    flex-direction: column;
+    background-image: url('../images/BrooklynPoliceDept.png'); /* Path to your background image */
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #f0f0f0;
-    background-attachment: fixed;
+    background-position: center;
+    background-color: #f0f0f0; /* Fallback color */
+
+}
+
+section {
+    background-color: white; /* White background for content areas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside each section */
+    margin: 10px; /* Space between sections */
+    width: 80%; /* Uses 80% of the body width */
+    max-width: 600px; /* Maximum width */
+}
+
+h1 {
+    color: #333; /* Dark grey color for headings */
+    margin: 20px 0; /* Space above and below the heading */
+}
+
+h2 {
+    color: #666; /* Lighter grey for sub-headings */
+    border-bottom: 2px solid #eee; /* Light line under sub-headings */
+    padding-bottom: 5px; /* Space under the sub-heading text */
+    margin-bottom: 10px; /* Space below the line */
+}
+
+p, ul {
+    color: #444; /* Dark grey for text */
+    line-height: 1.6; /* Makes lines of text more readable */
+}
+
+ul {
+    list-style-type: none; /* Removes bullet points from lists */
+    padding: 0; /* Removes padding */
+}
+
+li {
+    padding: 5px 0; /* Padding for list items */
+    border-bottom: 1px solid #eee; /* Line between items */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section {
+        width: 90%; /* Wider sections on smaller screens */
+    }
+
+    h1, h2 {
+        text-align: center; /* Centers headings on smaller screens */
+    }
 }
 
 
