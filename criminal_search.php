@@ -34,7 +34,7 @@
         $sql = "SELECT c.Criminal_ID, c.First, c.Last, c.Street, c.City, c.State, c.P_status, c.Phone, a.Alias 
         FROM Criminals AS c
         INNER JOIN Alias AS a ON a.Criminal_ID = c.Criminal_ID 
-        WHERE c.Criminal_ID = ?";
+        WHERE c.Criminal_ID = 100003";
 
         // Prepared statement to prevent SQL Injection
         if ($stmt = $conn->prepare($sql)) {
