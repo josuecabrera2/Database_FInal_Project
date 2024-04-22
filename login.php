@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../PROJECTDIREC/styles/login.css">
 </head>
 <body>
     <h1>Login</h1>
@@ -30,7 +30,8 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['action']) && $_POST['action'] == 'guest') {
-            header("Location: criminal_search.php");
+            $_SESSION['user_role'] = 'guest'; // Set session variable for guest
+            header("Location: search.php"); // Assuming search.php is a non-sensitive info page
             exit();
         }
 
@@ -38,7 +39,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";  // Database connection password
-            $dbname = "Criminals";
+            $dbname = "final_project";
 
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -60,10 +61,9 @@
                 $result = $stmt->get_result();
 
                 if ($result->num_rows > 0) {
-                    // Credentials are correct, store permission ID in session
-                    $_SESSION['perm_id'] = $perm_id;  
-                    // Redirect to the admin search page
-                    header("Location: criminal_search_admin.php");
+                    $_SESSION['user_role'] = 'admin';  // Set session variable for admin
+                    $_SESSION['perm_id'] = $perm_id;  // Store permission ID if needed for further use
+                    header("Location: search_admin.php"); // Redirect to a page with full admin privileges
                     exit();
                 } else {
                     // Credentials are incorrect
@@ -77,6 +77,5 @@
         }
     }
     ?>
-
 </body>
 </html>
